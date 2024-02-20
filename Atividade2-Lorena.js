@@ -43,7 +43,7 @@ var velocidade = 95
 var tempo = 3.5
 var distancia = velocidade * tempo
 
-console.log(95 * 3.5)
+
 console.log("A distância percorrida foi de", distancia, "km")
 
 
