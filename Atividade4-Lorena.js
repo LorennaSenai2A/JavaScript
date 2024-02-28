@@ -16,9 +16,9 @@ console.log("Quarta diagonal =", matriz [2][2], matriz[1][1], matriz[0][0]);
 //Nome
 //Idade
 //Cor favorita
-//Fruta favorita
-//Endereço
+//Endereco
 //Nome do pet
+//Fruta favorita
 
 //Olá "Fulano"! Seja bem-vindo ao nosso sistema.
 //Você mora no endereço "Endereço", e tem um pet chamado "pet".
@@ -28,7 +28,7 @@ console.log("Quarta diagonal =", matriz [2][2], matriz[1][1], matriz[0][0]);
 var usuario = ["Lorenna", 16, "Roxa", "Jau-SP", "Thor", "Uva verde"];
 
 console.log("Olá", usuario[0] + "!", "Seja bem-vinda ao nosso sistema.");
-console.log("Você mora no endereço", usuario[3] + "?", "e tem um pet chamado ", usuario[4]);
+console.log("Você mora no endereço", usuario[3] + "?", "e tem um pet chamado", usuario[4]);
 console.log("Sua idade é ", usuario[1] + "?", "e você gosta da fruta ", usuario[5] + "?");
-console.log("Sua cor favorita é ", usuario[2] + "?");
+console.log("Sua cor favorita é", usuario[2] + "?");
 console.log("Obrigada pela confirmação dos dados, eles iram ser analizados e fixados no sistema!");
