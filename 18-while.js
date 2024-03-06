@@ -50,3 +50,35 @@ do {
     fatura > limite && console.log(`Estourou o limite do cartão`);
 } while (fatura <= limite);
     
+console.log("------------------------------------------")
+//Jogo de cara e coroa -> melhor de 3 tentativas
+//repetição -> 3
+//variavel cara ou coroa -> aleatória
+//placar -> vitorias  e derrotas 
+
+var rodada = 1;
+var moeda = "";
+var escolhaJogador = "";
+var vitoria = 0;
+var derrota = 0;
+
+while (rodada <= 3) {
+    moeda = Math.random() >= 0.5 ? "Cara" : "Coroa";
+    escolhaJogador = Math.random() >= 0.5 ? "Cara" : "Coroa";
+
+if (escolhaJogador == moeda) {
+    console.log(`Parabéns, você ganhou!`);
+    vitoria++;
+}  else {
+    console.log(`Loser haha!`);
+    derrota++;
+}
+rodada ++;
+}
+console.log("|------------|");
+console.log("|  PLACAR    |");
+console.log("|------------|");
+console.log(`|Vitorias: ${vitoria}|`);
+console.log(`|Derrota: ${derrota} |`);
+console.log("|-----------|");
+
