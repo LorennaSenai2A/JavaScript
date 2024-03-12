@@ -23,55 +23,96 @@ console.log("-----------------------------------")
 //console.log(`___|___|___`)
 //console.log(`   |   |   `)
 
-var jogador1 = "X"
-var jogador2 = "O"
 
 const jogoVelha = [
     [" ", " ", " "],
     [" ", " ", " "],
     [" ", " ", " "]
-]
-console.table(jogoVelha)
+];
+
+let jogadorAtual = "X";
 
 function jogar(jogador) { 
-    let linha, coluna
+    let linha, coluna;
+
     do {
         linha = Math.floor(Math.random() *3);
         coluna = Math.floor(Math.random() *3);
-    } while (jogoVelha[linha][coluna] !== " ");
-    jogoVelha[linha][coluna] = jogador
+    } while (jogoVelha[0][0] !== " ");
+
+jogoVelha[linha][coluna] = jogador;
+jogadorAtual = jogadorAtual === "X" ? "O" : "X";
 }
 
-function jogadaAleatoria(jogador) {
-jogoVelha[linha][coluna] = jogador
+function verificaVencedor() {
+    for (let i = 0; i < 3; i++) {
+        //verifica coluna
+        if (
+            jogoVelha[0][i] === jogoVelha[1][i] && 
+            jogoVelha[1][i] === jogoVelha[2][i] &&
+            jogoVelha[1][i] !== ""
+        ) {
+            console.log(`O jogador ${jogoVelha[1][i]} ganhou`);
+            return jogoVelha[1][i];
+            //verificando linhas
+    } else if (
+        jogoVelha[i][0] === jogoVelha[i][1] && 
+        jogoVelha[i][1] === jogoVelha[i][2] &&
+        jogoVelha[i][1] !== ""
+    ) {
+        console.log(`O jogador ${jogoVelha[i][1]} ganhou`);
+        return jogoVelha[i][1];
+} 
+    }
+if (
+    //verificando diagonal
+    jogoVelha[0][0] === jogoVelha[1][1] && 
+    jogoVelha[1][1] === jogoVelha[2][2] &&
+    jogoVelha[1][1] !== " "
+) {
+    console.log(`O jogador ${jogoVelha[1][1]} ganhou`);
+    return jogoVelha[1][1];
+} else if (
+    jogoVelha[0][2] === jogoVelha[1][1] && 
+    jogoVelha[1][1] === jogoVelha[2][0] &&
+    jogoVelha[1][1] !== " "
+) {
+    console.log(`O jogador ${jogoVelha[1][1]} ganhou`);
+    return jogoVelha[1][1];
 }
 
-const linhaVencador = [
-    [jogoVelha[0][0],[0][1],[0][2]]
-    [jogoVelha[1][0],[1][1],[1][2]]
-    [jogoVelha[2][0],[2][1],[2][2]]
 
-    [jogoVelha[0][0],[1][0],[2][0]]
+if (!jogoVelha.some((event) => event.includes(""))){
+    console.log("O jogo empatou");
+    return "Empatou";
+}
+return "";
+}
 
-    [jogoVelha[1][0],[1][1],[2][1]]
-    [jogoVelha[0][0],[0][1],[0][2]]
+let vencedor = "";
 
-    [jogoVelha[0][0],[1][1],[2][2]]
+while (!vencedor) {
+    jogar(jogadorAtual);
+    console.table(jogoVelha);
+    vencedor = verificaVencedor();
 
-    [jogoVelha[2][0],[2][1],[2][2]]
-]
+    if (!vencedor) {
+        jogar(jogadorAtual);
+        console.table(jogoVelha);
+        vencedor = verificaVencedor();
+    }
+}
 
-
-// jogar(jogador1)
-// jogar(jogador2)
-// jogar(jogador1)
-// jogar(jogador2)
-// jogar(jogador1)
-// jogar(jogador2)
-// jogar(jogador1)
-// jogar(jogador2)
-// jogar(jogador1)
-// console.table(jogoVelha);
+jogar(jogador1)
+jogar(jogador2)
+jogar(jogador1)
+jogar(jogador2)
+jogar(jogador1)
+jogar(jogador2)
+jogar(jogador1)
+jogar(jogador2)
+jogar(jogador1)
+console.table(jogoVelha);
 
 
 
