@@ -94,38 +94,73 @@
 // novoPetzinho.setNome("Rex");
 // console.log(novoPetzinho.getNome()); //"Rex"
 
-console.log("----POLIMORFISMO----")
-class   Animal{
-constructor(nome) {
-    this.nome = nome;
+// console.log("----POLIMORFISMO----")
+// class   Animal{
+// constructor(nome) {
+//     this.nome = nome;
+//   }
+//   fazerBarulho() {
+//     console.log("O animal faz um barulho genérico.");
+//   }
+// }
+// class Cachorro extends Animal {
+//   constructor(nome) {
+//     super(nome);
+//   }
+//   fazerBarulho() {
+//     console.log("O cachorro late!");
+//   }
+// }
+// class Gato extends Animal {
+//   constructor(nome) {
+//     super(nome);
+//   }
+//   fazerBarulho() {
+//     console.log("O gato mia!");
+//   }
+// }
+// // Exemplo de uso
+// const animais = [
+//   new Cachorro("Rex"),
+//   new Gato("Mia"),
+//   new Animal("Bob"), // Animal genérico
+// ];
+// for (const animal of animais) {
+//   animal.fazerBarulho();
+// }
+console.log("----EXEMPLOS----");
+// criando ima classe retângulo
+class Retangulo {
+  constructor(comprimento, largura) {
+    this.comrpimento = comprimento;
+    this.largura = largura;
   }
-  fazerBarulho() {
-    console.log("O animal faz um barulho genérico.");
+  obterArea(){
+    return this.comprimento * this.largura;
+  }
+  obterPerimetro(){
+    return this.comrpimento * 2 + this.largura * 2
+  }
+  setComprimento(novoComprimento){
+    this.comprimento = novoComprimento;
+  }
+  setLargura(novaLargura){
+    this.largura = novaLargura;
   }
 }
-class Cachorro extends Animal {
-  constructor(nome) {
-    super(nome);
-  }
-  fazerBarulho() {
-    console.log("O cachorro late!");
-  }
+// criando um objeto do "tipo" retângulo
+const ret1 = new Retangulo(10, 15);
+
+function displayRet(retangulo){
+console.table(retangulo);
+console.log(`comprimento = ${retangulo.comprimento}`);
+console.log(`largura = ${retangulo.largura}`);
+console.log(`área = ${retangulo.obterArea()}`);
+console.log(`perimetro = ${retangulo.obterPerimetro()}`);
 }
-class Gato extends Animal {
-  constructor(nome) {
-    super(nome);
-  }
-  fazerBarulho() {
-    console.log("O gato mia!");
-  }
-}
-// Exemplo de uso
-const animais = [
-  new Cachorro("Rex"),
-  new Gato("Mia"),
-  new Animal("Bob"), // Animal genérico
-];
-for (const animal of animais) {
-  animal.fazerBarulho();
-}
+displayRet(ret1);
+ret1.setComprimento(20);
+displayRet(ret1);
+ret1.setLargura(20);
+displayRet(ret1);
 
