@@ -18,9 +18,9 @@ console.log(`Tamanho do texto: ${texto4.length} caracteres!`);
 //Caracteres de escape
 var texto5 = "Olá, meu nome é \"Cristiano\"!";
 console.log(texto5);
-var texto6 = "Quebra de linha \noutra linha";
+var texto6 = "Quebra de linha \"noutra linha";
 console.log(texto6);
-var texto7 = "Tabulação \toutra tabulação";
+var texto7 = "Tabulação \"toutra tabulação";
 console.log(texto7);
 
 //obtendo partes de uma string (Método substring)

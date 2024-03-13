@@ -37,7 +37,7 @@ const Aluno1 = new Aluno(4495, "Lorena de Almeida Victor", 2008, "TI");
 Aluno1.apresentarSe();
 
 console.log(
-  "---------------------------------------------------------------------------------------"
+  "--------------------------------------------------------------------------------------"
 );
 
 // Crie e utilize uma classe "sorvete" contendo a propriedade : sabor, preço e tamanho (P | M | G)
@@ -69,13 +69,13 @@ cliente1.pedido();
 cliente2.pedido();
 cliente3.pedido();
 console.log(
-  "------------------------Aumento do valor do sorvete de morango:-------------------------"
+  "------------------------Aumento do valor do sorvete de morango:-----------------------"
 );
 cliente1.setPreco(10.51);
 cliente1.pedido();
 
 console.log(
-  "----------------------------------------------------------------------------------------"
+  "--------------------------------------------------------------------------------------"
 );
 // 1.Comparação de strings (sem case sensitive):
 // Escreva uma função em JavaScript que recebe duas strings e verifica se elas são iguais,
@@ -88,3 +88,40 @@ console.log(
 // 3.Inverter a ordem das palavras em uma frase:
 // Desenvolva uma função em JavaScript que recebe uma frase e retorna uma nova string com a
 // ordem das palavras invertida.
+
+function compararStrings(string1, string2) {
+  return string1.toLowerCase() === string2.toLowerCase();
+}
+
+const string1 = "Olá Mundo";
+const string2 = "Olá mundo";
+
+if (compararStrings(string1, string2)) {
+  console.log("As strings são iguais, ignorando o caso das letras.");
+} else {
+  console.log("As strings são diferentes.");
+}
+console.log(
+  "--------------------------------------------------------------------------------------"
+);
+
+function extrairNumeros(str) {
+  const regex = /\d+/g;
+  const numbers = str.match(regex);
+  return numbers;
+}
+
+let string = "O produto 12, 1, 2587, possuem o preço de R$12,99.";
+let numeros = extrairNumeros(string);
+console.log(numeros); // ["12", "99"]
+console.log(
+  "--------------------------------------------------------------------------------------"
+);
+
+function inverterFrase(frase) {
+  const palavras = frase.split(" ");
+  return palavras.reverse().join(" ");
+}
+const frase = "Este é um exemplo de frase invertida";
+const fraseInvertida = inverterFrase(frase);
+console.log(fraseInvertida); //"invertida frase de exemplo um é Este"
