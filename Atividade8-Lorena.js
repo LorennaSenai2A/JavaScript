@@ -73,3 +73,18 @@ console.log(
 );
 cliente1.setPreco(10.51);
 cliente1.pedido();
+
+console.log(
+  "----------------------------------------------------------------------------------------"
+);
+// 1.Comparação de strings (sem case sensitive):
+// Escreva uma função em JavaScript que recebe duas strings e verifica se elas são iguais,
+// ignorando o tamanho das letras (maiúsculas e minúsculas).
+
+// 2.Extrair números de uma string:
+// Crie uma função em JavaScript que recebe uma string e retorna uma lista contendo apenas
+// os números encontrados nela.
+
+// 3.Inverter a ordem das palavras em uma frase:
+// Desenvolva uma função em JavaScript que recebe uma frase e retorna uma nova string com a
+// ordem das palavras invertida.
